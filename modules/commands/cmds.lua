@@ -1,7 +1,7 @@
 local discordia=require('discordia')
 local commands=require('./../commands.lua')
 discordia.extensions()
-commands:Add('cmds',{'commands','cmd','help','how does this work???'},'Returns a list of all commands',function(message,args)
+commands:Add('cmds',{'commands','cmd','help'},'Returns a list of all commands',function(message,args)
     local final='```\n'
     for i,v in pairs(commands.command_list) do
         local name=v.name

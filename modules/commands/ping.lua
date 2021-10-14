@@ -1,6 +1,6 @@
 local discordia=require('discordia')
-discordia.extensions()
 local commands=require('./../commands.lua')
+discordia.extensions()
 commands:Add('ping',{'pong','latency'},"Returns the bot's latency (it doesnt lol)", function(message,args)
     return message:reply('ping 👍')
 end)

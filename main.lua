@@ -1,6 +1,4 @@
 local discordia = require('discordia')
-local json = require('json')
-local http = require('coro-http')
 local token = require('./modules/token.lua')
 local commands=require('./modules/commands.lua')
 local prefix = '%'

@@ -13,14 +13,14 @@ setmetatable(commands.command_list,{__index=function(self,index)
 end})
 function commands:Add(name,alias,desc,exec)
     name=type(name)=='string' and name or ('Command'..#self.command_list)
-    self.command_list[name]={name=name,alias=type(alias)=='table'and alias or {alias},desc=type(desc)=='string'and desc or ('No description provided'),exec=type(exec)=='function'and exec or function(message) return message:reply('No command asigned') end}
+    self.command_list[name]={name=name,alias=type(alias)=='table'and alias or {'None'},desc=type(desc)=='string'and desc or ('No description provided'),exec=type(exec)=='function'and exec or function(message) return message:reply('No command asigned') end}
     return self.command_list[name]
 end
 function commands:Get(name)
     return self.command_list[name]
 end
 function commands:INIT()
-    for file in io.popen([[dir "C:\Users\thefa\Desktop\VSC\random api bot\modules\commands" /b]]):lines() do require('./commands/'..file) end
+    for file in io.popen([[dir "C:\Users\thefa\Desktop\VSC\modular discord bot\modules\commands" /b]]):lines() do require('./commands/'..file) end
 end
 
 return commands

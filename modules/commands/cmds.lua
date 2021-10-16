@@ -5,12 +5,9 @@ commands:Add('cmds',{'commands','cmd','help'},'Returns a list of all commands',f
     local final='```\n'
     for i,v in pairs(commands.command_list) do
         local name=v.name
-        local alias=''
-        for j,k in pairs(v.alias) do
-            alias=alias..k..', '
-        end
+        local alias=table.concat(v.alias,', ')
         local desc=v.desc
-        final=final..'Name: '..name..'\nDescription: '..desc..'\n'..'Aliases: '..alias:sub(1,#alias-2)..'\n\n'
+        final=final..'Name: '..name..'\nDescription: '..desc..'\n'..'Aliases: '..alias..'\n\n'
     end
     final=final..'```'
     message:reply(final)

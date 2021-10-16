@@ -21,6 +21,7 @@ function commands:Get(name)
 end
 function commands:INIT()
     for file in io.popen([[dir "C:\Users\thefa\Desktop\VSC\modular discord bot\modules\commands" /b]]):lines() do require('./commands/'..file) end
+    print('commands done')
 end
 
 return commands

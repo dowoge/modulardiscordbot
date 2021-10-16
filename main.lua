@@ -18,7 +18,11 @@ client:on('messageCreate', function(message)
         table.remove(args,1)
         local command=commands.command_list[cmdName]
         if command~=nil then
-            command.exec(message,args)
+            if message.guild~=nil then
+                command.exec(message,args)
+            else
+                message:reply('i will not let you type in dms!!! 👿👿😡😠')
+            end
         else
             message:reply('command does not exist 👎')
         end

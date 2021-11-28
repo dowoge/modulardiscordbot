@@ -6,4 +6,4 @@ commands:Add('ping',{'pong','latency'},"Returns the bot's latency", function(mes
     local timestamp=date.toSeconds(message:getDate())
     local ping=math.abs(os.time()-timestamp)
     return message:reply(tostring(math.floor((ping*100)+.5))..' ms')
-end)
+end) -- wat dis do ping command look my test server rq

@@ -22,7 +22,6 @@ commands:Add('insardia',{'sard'},'Speak lke insrda!!', function(message,args)
             local new_word=''
             local rng = math.random(1,30)
             if table.find(alternatives,word) then
-                -- table.insert(formatted_words,alternatives[word][#alternatives])
                 formatted_words[#formatted_words+1]=alternatives[word][math.random(1,#alternatives[word])]
                 goto continuew
             end

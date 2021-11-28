@@ -4,6 +4,7 @@ discordia.extensions()
 local vowels={'a','e','i','o','u'}
 local alternatives={}
 local function addAlternative(word,alternative)if not alternatives[word] then alternatives[word]=alternative end end
+function table.find(t,v) tr=nil for i,j in pairs(t)do if i==v then tr=j or i break end end if tr==nil then for i,j in pairs(t) do if v==j then tr=i end end end return tr end
 addAlternative('hi', {"hi", "hizies"})
 addAlternative('hey', {"hey", "heya"})
 addAlternative('and', {"and", "n"})
@@ -20,8 +21,9 @@ commands:Add('insardia',{'sard'},'Speak lke insrda!!', function(message,args)
         for iw,word in pairs(words) do
             local new_word=''
             local rng = math.random(1,30)
-            if table.search(alternatives,word) then
-                table.insert(formatted_words,alternatives[word][rng])
+            if table.find(alternatives,word) then
+                -- table.insert(formatted_words,alternatives[word][#alternatives])
+                formatted_words[#formatted_words+1]=alternatives[word][math.random(1,#alternatives[word])]
                 goto continuew
             end
             if (#word-1 >= 3) and (rng==1) then
@@ -35,7 +37,7 @@ commands:Add('insardia',{'sard'},'Speak lke insrda!!', function(message,args)
                             if word:sub(i+1,i+1)==letter then
                                 goto continuel
                             end
-                            if table.search(vowels,letter) then
+                            if table.find(vowels,letter) then
                                 goto continuel
                             end
                         end

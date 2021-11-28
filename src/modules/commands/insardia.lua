@@ -10,6 +10,7 @@ addAlternative('and', {"and", "n"})
 addAlternative('you', {"yu", "you", "u"})
 addAlternative('are', {"are", "r"})
 addAlternative('got', {"got", "gto", "tog"})
+addAlternative('what',{'wat','waht','wt'})
 commands:Add('insardia',{'sard'},'Speak lke insrda!!', function(message,args)
     local lines=table.concat(args,' '):split('\n')
     local formatted_string=''

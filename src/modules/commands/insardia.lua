@@ -6,12 +6,12 @@ local alternatives={}
 local function addAlternative(word,alternative)if not alternatives[word] then alternatives[word]=alternative end end
 function table.find(t,v) tr=nil for i,j in pairs(t)do if i==v then tr=j or i break end end if tr==nil then for i,j in pairs(t) do if v==j then tr=i end end end return tr end
 addAlternative('hi', {"hi", "hizies"})
-addAlternative('hey', {"hey", "heya"})
-addAlternative('and', {"and", "n"})
+addAlternative('hey', {"hey", "heya", "heyo", "heeey", "heeee"})
+addAlternative('and', {"and", "n", "&"})
 addAlternative('you', {"yu", "you", "u"})
 addAlternative('are', {"are", "r"})
 addAlternative('got', {"got", "gto", "tog"})
-addAlternative('what',{'wat','waht','wt'})
+addAlternative('what',{'wat','waht','wt', 'wht'})
 commands:Add('insardia',{'sard'},'Speak lke insrda!!', function(message,args)
     local lines=table.concat(args,' '):split('\n')
     local formatted_string=''

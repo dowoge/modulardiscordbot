@@ -1,0 +1,1 @@
+luvit ./src/main.lua

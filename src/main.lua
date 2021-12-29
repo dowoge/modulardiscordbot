@@ -7,6 +7,7 @@ discordia.extensions()
 
 client:on('ready',function()
     commands:INIT()
+    client:getGuild(io.open('restart.txt','r'):read():split(',')[1]):getChannel(io.open('restart.txt','r'):read():split(',')[2]):send({content='bot ready',reference={message=client:getChannel(io.open('test.txt','r'):read():split(',')[2]):getMessage(io.open('test.txt','r'):read():split(',')[3]),mention=true}})
 end)
 
 client:on('messageCreate', function(message)

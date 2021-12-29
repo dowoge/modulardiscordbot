@@ -19,7 +19,7 @@ client:on('messageCreate', function(message)
         local command=commands.command_list[cmdName]
         if command~=nil then
             if message.guild~=nil then
-                command.exec(message,args)
+                command.exec(message,args,{client,discordia,token})
             else
                 message:reply('i will not let you type in dms!!! 👿👿😡😠')
             end

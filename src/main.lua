@@ -7,7 +7,21 @@ discordia.extensions()
 
 client:on('ready',function()
     commands:INIT()
-    client:getGuild(io.open('restart.txt','r'):read():split(',')[1]):getChannel(io.open('restart.txt','r'):read():split(',')[2]):send({content='bot ready',reference={message=client:getChannel(io.open('restart.txt','r'):read():split(',')[2]):getMessage(io.open('restart.txt','r'):read():split(',')[3]),mention=true}})
+    local t=io.open('restart.txt','r'):read('*all')=='' and {} or io.open('restart.txt','r'):read():split(',')
+    if #t==3 then
+        client:getGuild(t[1]):getChannel(t[2]):send(
+            {
+                content='bot ready',
+                reference={
+                    message=client:getChannel(t[2]):getMessage(t[3]),
+                    mention=true
+                }
+            }
+        )
+        io.open('restart.txt','w+'):write(''):close()
+    else
+        print('restart.txt is empty or something so probably a first start')
+    end
 end)
 
 client:on('messageCreate', function(message)

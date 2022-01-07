@@ -1,2 +1,2 @@
 # modulardiscordbot
-my attempt at making a good discord bot :3
+my attempt at making a somewhat well working discord bot using custom made command adding handling and other stuff yep thx

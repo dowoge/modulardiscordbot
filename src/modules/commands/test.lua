@@ -1,6 +1,0 @@
-local discordia=require('discordia')
-local commands=require('./../commands.lua')
-discordia.extensions()
-commands:Add('test',{'test'},'test',function(message,args)
-    message:reply('test1')
-end)

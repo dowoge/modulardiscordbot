@@ -2,7 +2,7 @@ local discordia=require('discordia')
 local commands=require('./../commands.lua')
 discordia.extensions()
 
-commands:Add('yttest',{},"wip", function(message,args,t)
+commands:Add('yt',{},"wip", function(message,args,t)
     if args[1] then
         if args[1]:match('?v=([%w-_]+)') or args[1]:match('youtu.be/([%w-_]+)') then
             local id=args[1]:match('?v=([%w-_]+)') or args[1]:match('youtu.be/([%w-_]+)')
